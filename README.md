@@ -1,6 +1,6 @@
-# expense_app
+# # AppXpenser - The expense_app
 
-A new Flutter project.
+A new Flutter project to inculcate the habit of saving pennies.
 
 ## Getting Started
 
