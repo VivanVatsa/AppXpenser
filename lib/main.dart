@@ -26,9 +26,17 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-        Card(
-        child: Text('CHART')
-        ,),
+        Container(
+          width: double.infinity,
+          child: Card(
+          child: Container(
+            color: Colors.blue,
+          // width: 100,
+          width: double.infinity,
+          child: Text('CHART'),),
+          elevation: 5,
+          ),
+        ),
         Card(
           child: Text('LIST FOR TX')
           ,),
