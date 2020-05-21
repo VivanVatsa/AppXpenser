@@ -7,8 +7,7 @@ class Transaction {
   //create a constructor
 
   Transaction(
-    {
-    this.id, 
+    {this.id, 
     this.title, 
     this.amount, 
     this.date});
