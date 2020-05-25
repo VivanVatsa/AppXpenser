@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import './transaction.dart';
 
 // void main() {
@@ -41,7 +42,8 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.start,
         // crossAxisAlignment: CrossAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -55,6 +57,27 @@ class MyHomePage extends StatelessWidget {
                 child: Text('CHART'),
               ),
               elevation: 5,
+            ),
+          ),
+
+          Card(
+            elevation: 10,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(labelText: 'Title'),
+                  ),
+                TextField(
+                  decoration: InputDecoration(labelText: 'Amount'),
+                  ),
+                  FlatButton(child: Text('Add Transaction'), 
+                  textColor: Colors.purple,
+                  onPressed: () {},)
+                ],
+              ),
             ),
           ),
           Column(
@@ -75,7 +98,8 @@ class MyHomePage extends StatelessWidget {
                       ),
                       padding: EdgeInsets.all(10),
                     child: Text(
-                      tx.amount.toString(),
+                      '\$${tx.amount}' ,
+                      // + tx.amount.toString()
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -101,7 +125,11 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      tx.date.toString(),
+                      // DateFormat('yyyy/MM/dd').format(tx.date),
+                      // DateFormat.yMMMd().add_jms().format(tx.date),
+                      DateFormat.yMMMd().format(tx.date),
+                      // DateFormat().format(tx.date),
+                      // tx.date.toString(),
                       style: TextStyle(color: Colors.grey),
                       ),
                   ],),
