@@ -2,7 +2,7 @@
 
 A new Flutter project to inculcate the habit of saving pennies.
 
-## Getting Started
+## 3rd in the Dart Line -> with more widget functionalities
 
 This project is a starting point for a Expense tracker Flutter application.
 
