@@ -1,7 +1,7 @@
 // import './widgets/transaction_list.dart';
-import './widgets/new_transaction.dart';
+import './widgets/user_transactions.dart';
 
-import './widgets/transaction_list.dart';
+
 import 'package:flutter/material.dart';
 // import './models/transaction.dart';
 // import './models/transaction.dart';
@@ -55,7 +55,7 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-      
+          UserTransactions(),
         ],
       ),
     );
