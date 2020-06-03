@@ -3,12 +3,18 @@ import 'package:intl/intl.dart';
 
 import '../models/transaction.dart';
 
-class TransactionList extends StatefulWidget {
-  final List<Transaction> transactions;
-  
-  TransactionList(this.transactions);
+class TransactionList extends StatelessWidget {
+//   @override
+//   _TransactionListState createState() => _TransactionListState();
+// }
 
-Widget build(BuildContext context) {
+// class _TransactionListState extends State<TransactionList>
+// {
+  final List<Transaction> transactions;
+
+  TransactionList(this.transactions);
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: transactions.map((tx) {
         return Card(
@@ -65,13 +71,16 @@ Widget build(BuildContext context) {
       }).toList(),
     );
   }
-
-  
-  // State<StatefulWidget> createState() {
-  
-  //   throw UnimplementedError();
-  // }
-
-
-  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
+/*
+class TransactionList extends StatefulWidget {
+  final List<Transaction> transactions;
+
+  TransactionList(this.transactions);
+
+  Widget build(BuildContext context) {
+    return 
+  }
+
+}
+*/
