@@ -1,11 +1,9 @@
+//WILL HOLD ALL THE TEXT FIELDS
 import 'package:flutter/material.dart';
 
 class NewTransaction extends StatelessWidget {
-  final Function addTx;
   final titleController = TextEditingController();
   final amountController = TextEditingController();
-
-  NewTransaction(this.addTx);
   
   @override
   Widget build(BuildContext context) {
@@ -46,5 +44,18 @@ class NewTransaction extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+/*
+class NewTransaction extends StatelessWidget {
+  final Function addTx;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
+  NewTransaction(this.addTx);
+  
+  @override
+  Widget build(BuildContext context) {
+    return ;
   }
 }
