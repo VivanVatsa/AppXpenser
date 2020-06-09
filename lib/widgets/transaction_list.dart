@@ -19,9 +19,8 @@ class TransactionList extends StatelessWidget {
       height: 300,
       child: ListView.builder(
         // must have attributes of the this current widget and to keep in mind that this has to be applied to all the widgets
-        itemBuilder: ,
-          children: transactions.map((tx) {
-            return Card(
+        itemBuilder: (ctx, index){
+          return Card(
               child: Row(
                 children: <Widget>[
                   Container(
@@ -34,7 +33,8 @@ class TransactionList extends StatelessWidget {
                     ),
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      '\$${tx.amount}',
+                      //by adding the tostringasfixed property which rounds off the value entered in the amount
+                      '\$${transactions[index].amount.toStringAsFixed(2)}',
                       // + tx.amount.toString()
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class TransactionList extends StatelessWidget {
                       //   ),
                       // )
                       Text(
-                        tx.title,
+                        transactions[index].title,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class TransactionList extends StatelessWidget {
                       Text(
                         // DateFormat('yyyy/MM/dd').format(tx.date),
                         // DateFormat.yMMMd().add_jms().format(tx.date),
-                        DateFormat.yMMMd().format(tx.date),
+                        DateFormat.yMMMd().format(transactions[index].date),
                         // DateFormat().format(tx.date),
                         // tx.date.toString(),
                         style: TextStyle(color: Colors.grey),
@@ -72,7 +72,9 @@ class TransactionList extends StatelessWidget {
                 ],
               ),
             );
-          }).toList(),
+
+        },
+        itemCount: transactions.length,
         ),
     );
   }
