@@ -11,13 +11,26 @@ class TransactionList extends StatelessWidget {
 // class _TransactionListState extends State<TransactionList>
 // {
   final List<Transaction> transactions;
-
   TransactionList(this.transactions);
   @override
+
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      child: ListView.builder(
+      child: transactions.isEmpty ? Column(children: <Widget>[
+        Text('No transactions Added yet!',
+        style: Theme.of(context).textTheme.headline6,
+         ),
+         SizedBox( // used as separators between 2 components in the application
+           height: 50,
+         ),
+         Container(
+           height: 200,
+           child: Image.asset(
+             'assets/images/waiting.png',
+             fit: BoxFit.cover,)),
+      ],
+      ) :  ListView.builder(
         // must have attributes of the this current widget and to keep in mind that this has to be applied to all the widgets
         itemBuilder: (ctx, index){
           return Card(
@@ -57,10 +70,7 @@ class TransactionList extends StatelessWidget {
                       // )
                       Text(
                         transactions[index].title,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                       Text(
                         // DateFormat('yyyy/MM/dd').format(tx.date),
