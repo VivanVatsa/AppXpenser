@@ -19,12 +19,28 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
-      ),
+        fontFamily: 'Quicksand',
+        textTheme: 
+        ThemeData.light().textTheme.copyWith(
+        headline6: TextStyle(
+          fontFamily: 'OpenSans', 
+          fontWeight: FontWeight.bold,
+          fontSize: 18, 
+          ),
+        ),
+      appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(
+            headline6:  TextStyle(
+            fontFamily: 'Open Sans',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+              ),
+            ),
+      )),
       home: MyHomePage(),
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
 
   // String titleInput;
@@ -37,18 +53,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 't1',
-      title: 'New Shoes',
-      amount: 69.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Weekly Groceries',
-      amount: 16.54,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: 't1',
+    //   title: 'New Shoes',
+    //   amount: 69.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'Weekly Groceries',
+    //   amount: 16.54,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   //for creating a new transaction when the button is pressed for adding new transaction
@@ -83,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Personal Expenses'),
+        title: Text(
+          'Personal Expenses',
+          ),
         actions: <Widget>[
           //we actually add action button in this widget prop
           IconButton(icon: Icon(Icons.add), 
@@ -111,8 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   elevation: 5,
                 ),
               ),
-                    TransactionList(_userTransactions),
-
+              TransactionList(_userTransactions),
               // UserTransactions(),
             ],
           ),
