@@ -50,7 +50,7 @@ class TransactionList extends StatelessWidget {
                     padding: EdgeInsets.all(10),
                     child: Text(
                       //by adding the tostringasfixed property which rounds off the value entered in the amount
-                      '\$${transactions[index].amount.toStringAsFixed(2)}',
+                      '\₹${transactions[index].amount.toStringAsFixed(2)}',
                       // + tx.amount.toString()
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
