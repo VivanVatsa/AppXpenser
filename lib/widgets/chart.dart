@@ -28,7 +28,7 @@ class Chart extends StatelessWidget {
         'day': DateFormat.E().format(weekDay).substring(0, 3),
         'amount': totalSum
       };
-    });
+    }).reversed.toList(); 
   }
 
   // another getter for calculating the whole transaction happened in the given week
@@ -55,9 +55,11 @@ class Chart extends StatelessWidget {
             return Flexible(
               fit: FlexFit.tight,
               child: ChartBar(
-                data['day'], 
+                data['day'],
                 data['amount'],
-                totalSpending == 0.0 ? 0.0 :  (data['amount'] as double) / totalSpending,
+                totalSpending == 0.0
+                    ? 0.0
+                    : (data['amount'] as double) / totalSpending,
               ),
             );
           }).toList(),
