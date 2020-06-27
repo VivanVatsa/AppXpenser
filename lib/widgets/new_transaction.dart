@@ -17,6 +17,7 @@ class _NewTransactionState extends State<NewTransaction> {
   DateTime _selectedDate;
 
   void _submitData() {
+    
     final enteredTitle = _titleController.text;
     final enteredAmount = double.parse(_amountController.text);
 
