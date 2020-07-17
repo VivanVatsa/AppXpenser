@@ -17,7 +17,9 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 450,
+      // height: 450,
+      height: MediaQuery.of(context).size.width *
+          0.8, // here i wanna occupy 60% of the available height
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
